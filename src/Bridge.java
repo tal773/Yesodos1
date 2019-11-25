@@ -5,7 +5,7 @@ enum State {
     DENIED,
     WAITING,
     IN_PROGRESS,
-    ERROR
+
 }
 public interface Bridge {
 
