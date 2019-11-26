@@ -17,13 +17,13 @@ public class RegisterToProjectUserStoryTest extends FinalProjectTest {
     @Test//try 1 to 4 registration
     public void validRegistertion(){
         //menahem is a moderator that has 0 projects and the students are not signed to a project yet
-        assertTrue(registerToProject(students,"menahem"));
+        assertTrue(registerToProject(students,"menahem"));//1 student
         students.add("333333333");
-        assertTrue(registerToProject(students,"menahem"));
+        assertTrue(registerToProject(students,"menahem"));//2 students
         students.add("212121212");
-        assertTrue(registerToProject(students,"menahem"));
+        assertTrue(registerToProject(students,"menahem"));//3 students
         students.add("234231123");
-        assertTrue(registerToProject(students,"menahem"));
+        assertTrue(registerToProject(students,"menahem"));//4 students
     }
 
     @Test//try 5 students registration
