@@ -1,17 +1,15 @@
+package yesodot1;
 
 import org.junit.*;
-import org.junit.runner.RunWith;
 
 import java.util.Vector;
-
-import static org.junit.Assert.*;
 
 
 public class FinalProjectTest {
     private Bridge bridge;
     @Before
     public void setUp() throws Exception {
-        bridge = Driver.getBridge();
+        bridge = Driver.getBridge();//reset and delete the data for each test
     }
 
     @After

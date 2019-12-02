@@ -1,3 +1,5 @@
+package yesodot1;
+
 import org.junit.*;
 
 import static junit.framework.TestCase.*;

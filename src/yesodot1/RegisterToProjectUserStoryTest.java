@@ -1,3 +1,5 @@
+package yesodot1;
+
 import org.junit.*;
 
 import java.util.Vector;
@@ -10,6 +12,7 @@ public class RegisterToProjectUserStoryTest extends FinalProjectTest {
     @Before
     public void setUp() throws Exception{
         super.setUp();
+        students=new Vector<>();
         students.add("205711111");
 
     }
@@ -73,9 +76,10 @@ public class RegisterToProjectUserStoryTest extends FinalProjectTest {
 
     @Test
     public void oneOfStudentsIsNotInDB(){
-        //menahem is a moderator that has 0 projects and 205711111 is not in the DB,the rest of students
+        //menahem is a moderator that has 0 projects and 205711112 is not in the DB,the rest of students
         // are in DB and are not assigned to a project
-        registerToProject(students,"menahem");
+        students.clear();
+        students.add("205711112");//not in DB
         assertFalse(registerToProject(students,"menahem"));
         students.add("333333333");
         //try 2 students and one of them is not in the DB
