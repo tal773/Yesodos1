@@ -25,9 +25,30 @@ public class Proxy implements Bridge {
     }
 
     @Override
-    public boolean registerToProject(Vector<String> ids, String moderator) {
+    public boolean registerToProject(Vector<String> ids,String projectName, String moderator) {
         if(real!=null)
-            return real.registerToProject(ids,moderator);
+            return real.registerToProject(ids,projectName,moderator);
+        return true;
+    }
+
+    @Override
+    public String getCode(String projectName) {
+        if(real!=null)
+            return real.getCode(projectName);
+        return null;
+    }
+
+    @Override
+    public boolean addStudents(String[] students) {
+        if(real!=null)
+            return real.addStudents(students);
+        return true;
+    }
+
+    @Override
+    public boolean addModerator(String moderator) {
+        if(real!=null)
+            return real.addModerator(moderator);
         return true;
     }
 }
