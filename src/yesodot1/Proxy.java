@@ -1,3 +1,5 @@
+package yesodot1;
+
 import java.util.Vector;
 
 public class Proxy implements Bridge {

@@ -1,3 +1,4 @@
+package yesodot1;
 
 import java.util.Vector;
 enum State {

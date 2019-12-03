@@ -1,3 +1,5 @@
+package yesodot1;
+
 import org.junit.*;
 
 import java.util.Vector;
@@ -10,6 +12,7 @@ public class RegisterToProjectUserStoryTest extends FinalProjectTest {
     @Before
     public void setUp() throws Exception{
         super.setUp();
+        students=new Vector<>();
         students.add("205711111");
 
     }
@@ -17,13 +20,13 @@ public class RegisterToProjectUserStoryTest extends FinalProjectTest {
     @Test//try 1 to 4 registration
     public void validRegistertion(){
         //menahem is a moderator that has 0 projects and the students are not signed to a project yet
-        assertTrue(registerToProject(students,"menahem"));
+        assertTrue(registerToProject(students,"menahem"));//1 student
         students.add("333333333");
-        assertTrue(registerToProject(students,"menahem"));
+        assertTrue(registerToProject(students,"menahem"));//2 students
         students.add("212121212");
-        assertTrue(registerToProject(students,"menahem"));
+        assertTrue(registerToProject(students,"menahem"));//3 students
         students.add("234231123");
-        assertTrue(registerToProject(students,"menahem"));
+        assertTrue(registerToProject(students,"menahem"));//4 students
     }
 
     @Test//try 5 students registration
@@ -73,9 +76,10 @@ public class RegisterToProjectUserStoryTest extends FinalProjectTest {
 
     @Test
     public void oneOfStudentsIsNotInDB(){
-        //menahem is a moderator that has 0 projects and 205711111 is not in the DB,the rest of students
+        //menahem is a moderator that has 0 projects and 205711112 is not in the DB,the rest of students
         // are in DB and are not assigned to a project
-        registerToProject(students,"menahem");
+        students.clear();
+        students.add("205711112");//not in DB
         assertFalse(registerToProject(students,"menahem"));
         students.add("333333333");
         //try 2 students and one of them is not in the DB
